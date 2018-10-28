@@ -6,8 +6,7 @@ default: build
 
 build:
 	dockerize -t $(DOCKER_IMAGE_NAME) \
-		--add-file index.html /www/ \
-		--add-file pi_armed_with_docker.jpg /www/ \
+		--add-file www /www \
 		--entry '/bin/busybox' \
 		--cmd 'httpd -f -p 80 -h /www' \
 		/bin/busybox
